@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Class 12 Maths Board Library</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
+}
+
+h1{
+text-align:center;
+}
+
+.section{
+margin-top:30px;
+background:rgba(255,255,255,0.08);
+padding:20px;
+border-radius:10px;
+}
+
+.formula{
+background:rgba(255,255,255,0.12);
+padding:10px;
+margin:8px 0;
+border-radius:6px;
+}
+
+.search{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+margin-top:10px;
+margin-bottom:20px;
+font-size:16px;
+}
+
+hr{
+border:1px solid rgba(255,255,255,0.2);
+margin:20px 0;
+}
+
+.nav{
+text-align:center;
+margin-top:20px;
+}
+
+.nav button{
+padding:10px 18px;
+border:none;
+border-radius:8px;
+background:#0072ff;
+color:white;
+cursor:pointer;
+margin:5px;
+}
+
+.footer{
+text-align:center;
+margin-top:40px;
+padding:20px;
+font-weight:bold;
+color:#00ffcc;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Class 12 Maths Board Formula Library</h1>
+
+<input type="text" class="search" placeholder="Search formula..." onkeyup="searchFormula(this.value)">
+
+<!-- MATRICES -->
+
+<div id="matrices" class="section">
+
+<h2>Matrices</h2>
+
+<div class="formula">Matrix = Rectangular array of numbers</div>
+<div class="formula">Order = m × n</div>
+
+<div class="formula">Row Matrix → 1 × n</div>
+<div class="formula">Column Matrix → m × 1</div>
+<div class="formula">Square Matrix → n × n</div>
+
+<div class="formula">Identity Matrix → diagonal = 1</div>
+
+<div class="formula">(A+B)ij = aij + bij</div>
+
+<div class="formula">(AB)ij = Σ aik bkj</div>
+
+<div class="formula">AB ≠ BA</div>
+
+<div class="formula">(AB)ᵀ = BᵀAᵀ</div>
+
+<div class="formula">Aᵀ = A → symmetric</div>
+
+<div class="formula">Aᵀ = −A → skew symmetric</div>
+
+<div class="formula">AA⁻¹ = I</div>
+
+<div class="formula">(AB)⁻¹ = B⁻¹A⁻¹</div>
+
+<div class="formula">Idempotent → A² = A</div>
+
+<div class="formula">Involutory → A² = I</div>
+
+<div class="formula">Nilpotent → Aⁿ = 0</div>
+
+<hr>
+
+<h3>Matrix Solving Questions</h3>
+
+<div class="formula">
+
+Q1 If A = B find k
+
+<br><br>
+
+A = |2 k|
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|3 4|
+
+<br><br>
+
+B = |2 5|
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|3 4|
+
+<br><br>
+
+Solution → k = 5
+
+</div>
+
+<div class="formula">
+
+Q2 Find Transpose
+
+<br><br>
+
+A =
+<br>|1 2 3|
+<br>|4 5 6|
+
+<br><br>
+
+Aᵀ =
+<br>|1 4|
+<br>|2 5|
+<br>|3 6|
+
+</div>
+
+<div class="formula">
+
+Q3 Solve AX = B
+
+<br><br>
+
+AX = B
+
+<br>
+
+Multiply both sides by A⁻¹
+
+<br>
+
+X = A⁻¹B
+
+</div>
+
+</div>
+
+<!-- DETERMINANTS -->
+
+<div id="determinants" class="section">
+
+<h2>Determinants</h2>
+
+<div class="formula">|A| = determinant of matrix</div>
+
+<div class="formula">Row interchange changes sign</div>
+
+<div class="formula">If two rows equal → determinant = 0</div>
+
+<div class="formula">Factor can be taken out</div>
+
+<div class="formula">Minor → determinant after removing row & column</div>
+
+<div class="formula">Cofactor Cij = (-1)^(i+j) Mij</div>
+
+<div class="formula">adj(A) = transpose of cofactor matrix</div>
+
+<div class="formula">A⁻¹ = adj(A) / |A|</div>
+
+<div class="formula">
+
+Area of triangle
+
+<br>
+
+½ | x1 y1 1 |
+<br>
+&nbsp;&nbsp;&nbsp;| x2 y2 1 |
+<br>
+&nbsp;&nbsp;&nbsp;| x3 y3 1 |
+
+</div>
+
+<div class="formula">
+
+Cramer's Rule
+
+<br>
+
+x = Dx / D
+
+<br>
+
+y = Dy / D
+
+</div>
+
+</div>
+
+<!-- NAVIGATION -->
+
+<div class="nav">
+
+<button onclick="scrollToSection('matrices')">Previous</button>
+
+<button onclick="scrollToSection('determinants')">Next</button>
+
+</div>
+
+<div class="footer">
+
+Created by Tomar Ji
+
+</div>
+
+</div>
+
+<script>
+
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+function searchFormula(input){
+
+let formulas = document.getElementsByClassName("formula");
+
+input = input.toLowerCase();
+
+for(let i=0;i<formulas.length;i++){
+
+let text = formulas[i].innerText.toLowerCase();
+
+if(text.includes(input)){
+formulas[i].style.display="block";
+}
+else{
+formulas[i].style.display="none";
+}
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
