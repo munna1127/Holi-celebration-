@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ultra Holi 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(-45deg,#ff0080,#ff8c00,#40e0d0,#8a2be2);
+background-size:400% 400%;
+animation:bg 10s infinite;
+overflow:hidden;
+
+}
+
+@keyframes bg{
+
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+
+}
+
+.card{
+
+background:rgba(255,255,255,0.1);
+padding:40px;
+border-radius:25px;
+backdrop-filter:blur(15px);
+text-align:center;
+box-shadow:0 0 40px rgba(0,0,0,0.3);
+width:360px;
+
+}
+
+h1{
+
+color:white;
+font-size:45px;
+
+}
+
+input{
+
+margin-top:15px;
+padding:12px;
+border:none;
+border-radius:30px;
+width:100%;
+text-align:center;
+
+}
+
+button{
+
+margin-top:10px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+background:linear-gradient(45deg,#ff512f,#dd2476);
+color:white;
+font-weight:600;
+
+}
+
+#wish{
+
+margin-top:15px;
+color:white;
+font-size:20px;
+
+}
+
+.confetti{
+
+position:absolute;
+width:10px;
+height:10px;
+border-radius:50%;
+top:-10px;
+animation:fall linear infinite;
+
+}
+
+@keyframes fall{
+
+0%{transform:translateY(-10px)}
+100%{transform:translateY(110vh)}
+
+}
+
+.splash{
+
+position:absolute;
+width:20px;
+height:20px;
+border-radius:50%;
+pointer-events:none;
+animation:splash 0.8s forwards;
+
+}
+
+@keyframes splash{
+
+0%{transform:scale(1);opacity:1}
+100%{transform:scale(6);opacity:0}
+
+}
+
+.trail{
+
+position:absolute;
+width:8px;
+height:8px;
+border-radius:50%;
+pointer-events:none;
+animation:trail 1s forwards;
+
+}
+
+@keyframes trail{
+
+0%{opacity:1}
+100%{opacity:0;transform:scale(3)}
+
+}
+
+canvas{
+
+position:fixed;
+top:0;
+left:0;
+pointer-events:none;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="canvas"></canvas>
+
+<div class="card">
+
+<h1>Happy Holi 🎨</h1>
+
+<input type="text" id="name" placeholder="Enter your name">
+
+<button onclick="wish()">Generate Wish</button>
+<button onclick="share()">WhatsApp Share</button>
+<button onclick="playMusic()">Play Music</button>
+<button onclick="shoot()">Shoot Colors 🎮</button>
+
+<input type="file" id="upload">
+
+<img id="preview" style="max-width:100%;margin-top:10px;border-radius:10px;display:none">
+
+<div id="wish"></div>
+
+</div>
+
+<audio id="song">
+<source src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav">
+</audio>
+
+<script>
+
+/* wish */
+
+function wish(){
+
+let name=document.getElementById("name").value
+
+document.getElementById("wish").innerText=
+"🌈 Happy Holi "+name+"!"
+
+}
+
+/* share */
+
+function share(){
+
+let name=document.getElementById("name").value
+
+window.open(
+"https://wa.me/?text="+encodeURIComponent("Happy Holi from "+name+" 🎨")
+)
+
+}
+
+/* music */
+
+function playMusic(){
+
+document.getElementById("song").play()
+
+}
+
+/* confetti */
+
+setInterval(()=>{
+
+let c=document.createElement("div")
+
+c.className="confetti"
+
+c.style.left=Math.random()*100+"vw"
+
+c.style.background="hsl("+Math.random()*360+",100%,50%)"
+
+c.style.animationDuration=(3+Math.random()*4)+"s"
+
+document.body.appendChild(c)
+
+setTimeout(()=>c.remove(),5000)
+
+},150)
+
+/* splash click */
+
+document.addEventListener("click",(e)=>{
+
+let s=document.createElement("div")
+
+s.className="splash"
+
+s.style.left=e.pageX+"px"
+s.style.top=e.pageY+"px"
+
+s.style.background="hsl("+Math.random()*360+",100%,50%)"
+
+document.body.appendChild(s)
+
+setTimeout(()=>s.remove(),800)
+
+})
+
+/* mouse trail */
+
+document.addEventListener("mousemove",(e)=>{
+
+let t=document.createElement("div")
+
+t.className="trail"
+
+t.style.left=e.pageX+"px"
+t.style.top=e.pageY+"px"
+
+t.style.background="hsl("+Math.random()*360+",100%,50%)"
+
+document.body.appendChild(t)
+
+setTimeout(()=>t.remove(),1000)
+
+})
+
+/* shoot colors */
+
+function shoot(){
+
+for(let i=0;i<30;i++){
+
+let s=document.createElement("div")
+
+s.className="splash"
+
+s.style.left=Math.random()*window.innerWidth+"px"
+s.style.top=Math.random()*window.innerHeight+"px"
+
+s.style.background="hsl("+Math.random()*360+",100%,50%)"
+
+document.body.appendChild(s)
+
+setTimeout(()=>s.remove(),800)
+
+}
+
+}
+
+/* photo upload */
+
+document.getElementById("upload").addEventListener("change",function(){
+
+let reader=new FileReader()
+
+reader.onload=e=>{
+
+let img=document.getElementById("preview")
+
+img.src=e.target.result
+
+img.style.display="block"
+
+}
+
+reader.readAsDataURL(this.files[0])
+
+})
+
+/* 3D particles */
+
+const canvas=document.getElementById("canvas")
+const ctx=canvas.getContext("2d")
+
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
+
+let particles=[]
+
+function createParticle(x,y){
+
+particles.push({
+
+x,y,
+vx:(Math.random()-0.5)*5,
+vy:(Math.random()-0.5)*5,
+size:5,
+color:`hsl(${Math.random()*360},100%,50%)`
+
+})
+
+}
+
+document.addEventListener("click",e=>{
+
+for(let i=0;i<20;i++){
+
+createParticle(e.clientX,e.clientY)
+
+}
+
+})
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+particles.forEach((p,i)=>{
+
+p.x+=p.vx
+p.y+=p.vy
+p.size*=0.96
+
+ctx.fillStyle=p.color
+ctx.beginPath()
+ctx.arc(p.x,p.y,p.size,0,Math.PI*2)
+ctx.fill()
+
+if(p.size<0.5) particles.splice(i,1)
+
+})
+
+requestAnimationFrame(animate)
+
+}
+
+animate()
+
+</script>
+
+</body>
+  </html>
