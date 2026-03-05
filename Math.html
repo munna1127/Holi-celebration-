@@ -1,0 +1,386 @@
+<div id="matrices" class="section">
+<h2>Chapter 1 – Matrices (Board Complete)</h2>
+
+<h3>1. Definition</h3>
+
+<div class="formula">Matrix = Rectangular array of numbers</div>
+<div class="formula">Order = m × n (rows × columns)</div>
+
+<h3>2. Types of Matrices</h3>
+
+<div class="formula">Row Matrix → 1 × n</div>
+<div class="formula">Column Matrix → m × 1</div>
+<div class="formula">Square Matrix → n × n</div>
+
+<div class="formula">Zero Matrix → All elements 0</div>
+<div class="formula">Diagonal Matrix → Non-zero only on diagonal</div>
+<div class="formula">Scalar Matrix → Diagonal elements equal</div>
+<div class="formula">Identity Matrix (I)</div>
+
+<div class="formula">Upper Triangular → aᵢⱼ = 0 for i &gt; j</div>
+<div class="formula">Lower Triangular → aᵢⱼ = 0 for i &lt; j</div>
+
+<h3>3. Equality of Matrices</h3>
+
+<div class="formula">A = B if aᵢⱼ = bᵢⱼ</div>
+
+<h3>4. Matrix Addition</h3>
+
+<div class="formula">Possible only if same order</div>
+<div class="formula">(A + B)ᵢⱼ = aᵢⱼ + bᵢⱼ</div>
+
+<h3>5. Scalar Multiplication</h3>
+
+<div class="formula">kA = Multiply each element by k</div>
+
+<h3>6. Matrix Multiplication</h3>
+
+<div class="formula">AB possible if columns of A = rows of B</div>
+<div class="formula">(AB)ᵢⱼ = Σ aᵢₖ bₖⱼ</div>
+
+<div class="formula">Matrix multiplication NOT commutative</div>
+<div class="formula">AB ≠ BA (in general)</div>
+
+<div class="formula">Associative → A(BC) = (AB)C</div>
+<div class="formula">Distributive → A(B + C) = AB + AC</div>
+<h3>7. Transpose of Matrix</h3>
+
+<div class="formula">Transpose of A = Aᵀ</div>
+<div class="formula">(Aᵀ)ᵢⱼ = aⱼᵢ</div>
+
+<div class="formula">(Aᵀ)ᵀ = A</div>
+
+<div class="formula">(A + B)ᵀ = Aᵀ + Bᵀ</div>
+
+<div class="formula">(AB)ᵀ = Bᵀ Aᵀ</div>
+
+<div class="formula">(kA)ᵀ = kAᵀ</div>
+
+<h3>8. Symmetric Matrix</h3>
+
+<div class="formula">Aᵀ = A</div>
+
+<div class="formula">Example form:</div>
+<div class="formula">[ a  b ]</div>
+<div class="formula">[ b  c ]</div>
+
+<h3>9. Skew Symmetric Matrix</h3>
+
+<div class="formula">Aᵀ = −A</div>
+
+<div class="formula">Diagonal elements = 0</div>
+
+<div class="formula">Example form:</div>
+<div class="formula">[ 0   a ]</div>
+<div class="formula">[ −a  0 ]</div>
+
+<h3>10. Decomposition Theorem</h3>
+
+<div class="formula">Any square matrix can be written as:</div>
+
+<div class="formula">A = ½(A + Aᵀ) + ½(A − Aᵀ)</div>
+
+<div class="formula">½(A + Aᵀ) → Symmetric</div>
+
+<div class="formula">½(A − Aᵀ) → Skew Symmetric</div>
+
+<h3>11. Identity Matrix</h3>
+
+<div class="formula">AI = IA = A</div>
+
+<div class="formula">I × I = I</div>
+
+<h3>12. Inverse Matrix</h3>
+
+<div class="formula">AA⁻¹ = I</div>
+
+<div class="formula">A⁻¹A = I</div>
+
+<div class="formula">Inverse exists only if |A| ≠ 0</div>
+
+<h3>13. Important Properties</h3>
+
+<div class="formula">(AB)⁻¹ = B⁻¹A⁻¹</div>
+
+<div class="formula">(Aᵀ)⁻¹ = (A⁻¹)ᵀ</div>
+
+<div class="formula">(kA)⁻¹ = (1/k)A⁻¹</div>
+<h3>14. Solving Matrix Equations</h3>
+
+<div class="formula">AX = B → X = A⁻¹B</div>
+
+<div class="formula">XA = B → X = BA⁻¹</div>
+
+<h3>15. Finding Unknown Elements</h3>
+
+<div class="formula">If A = B then corresponding elements equal</div>
+
+<div class="formula">a₁₁ = b₁₁</div>
+<div class="formula">a₁₂ = b₁₂</div>
+<div class="formula">a₂₁ = b₂₁</div>
+<div class="formula">a₂₂ = b₂₂</div>
+
+<h3>16. Condition for Symmetric Matrix</h3>
+
+<div class="formula">Aᵀ = A</div>
+
+<div class="formula">Compare elements and form equations</div>
+
+<h3>17. Condition for Skew Symmetric Matrix</h3>
+
+<div class="formula">Aᵀ = −A</div>
+
+<div class="formula">Diagonal elements = 0</div>
+
+<h3>18. Matrix Commutativity Questions</h3>
+
+<div class="formula">AB = BA</div>
+
+<div class="formula">Find unknown values using element comparison</div>
+
+<h3>19. Identity Matrix Trick</h3>
+
+<div class="formula">AI = IA = A</div>
+
+<div class="formula">I² = I</div>
+
+<h3>20. Matrix Power</h3>
+
+<div class="formula">A⁰ = I</div>
+
+<div class="formula">A¹ = A</div>
+
+<div class="formula">A² = A × A</div>
+
+<h3>21. Board Favourite Pattern</h3>
+
+<div class="formula">If A² = A then A is idempotent matrix</div>
+
+<div class="formula">If A² = I then A is involutory matrix</div>
+
+<div class="formula">If Aᵀ = −A then A is skew symmetric</div>
+
+<h3>22. Special Matrix Types (Boards)</h3>
+
+<div class="formula">Idempotent → A² = A</div>
+
+<div class="formula">Involutory → A² = I</div>
+
+<div class="formula">Nilpotent → Aⁿ = 0</div>
+<h3>23. Board Repeated Questions (With Full Solution)</h3>
+
+<h4>Q1. If A = B, find k</h4>
+
+<div class="formula">
+A =
+</div>
+
+<div class="formula">
+[2  k]
+</div>
+
+<div class="formula">
+[3  4]
+</div>
+
+<div class="formula">
+B =
+</div>
+
+<div class="formula">
+[2  5]
+</div>
+
+<div class="formula">
+[3  4]
+</div>
+
+<div class="formula">
+Solution:
+</div>
+
+<div class="formula">
+If A = B then corresponding elements are equal
+</div>
+
+<div class="formula">
+k = 5
+</div>
+
+<div class="formula">
+Final Answer: k = 5
+</div>
+
+---
+
+<h4>Q2. Find transpose of matrix</h4>
+
+<div class="formula">
+A =
+</div>
+
+<div class="formula">
+[1 2 3]
+</div>
+
+<div class="formula">
+[4 5 6]
+</div>
+
+<div class="formula">
+Solution:
+</div>
+
+<div class="formula">
+Transpose means rows become columns
+</div>
+
+<div class="formula">
+Aᵀ =
+</div>
+
+<div class="formula">
+[1 4]
+</div>
+
+<div class="formula">
+[2 5]
+</div>
+
+<div class="formula">
+[3 6]
+</div>
+
+<div class="formula">
+Final Answer: Aᵀ =
+</div>
+
+<div class="formula">
+[1 4]
+</div>
+
+<div class="formula">
+[2 5]
+</div>
+
+<div class="formula">
+[3 6]
+</div>
+
+---
+
+<h4>Q3. Show that matrix is symmetric</h4>
+
+<div class="formula">
+A =
+</div>
+
+<div class="formula">
+[2 3]
+</div>
+
+<div class="formula">
+[3 4]
+</div>
+
+<div class="formula">
+Solution:
+</div>
+
+<div class="formula">
+Find transpose
+</div>
+
+<div class="formula">
+Aᵀ =
+</div>
+
+<div class="formula">
+[2 3]
+</div>
+
+<div class="formula">
+[3 4]
+</div>
+
+<div class="formula">
+Aᵀ = A
+</div>
+
+<div class="formula">
+Therefore matrix is symmetric
+</div>
+
+---
+
+<h4>Q4. Show matrix is skew symmetric</h4>
+
+<div class="formula">
+A =
+</div>
+
+<div class="formula">
+[0 3]
+</div>
+
+<div class="formula">
+[-3 0]
+</div>
+
+<div class="formula">
+Solution:
+</div>
+
+<div class="formula">
+Find transpose
+</div>
+
+<div class="formula">
+Aᵀ =
+</div>
+
+<div class="formula">
+[0 -3]
+</div>
+
+<div class="formula">
+[3 0]
+</div>
+
+<div class="formula">
+Aᵀ = −A
+</div>
+
+<div class="formula">
+Therefore matrix is skew symmetric
+</div>
+
+---
+
+<h4>Q5. Solve matrix equation AX = B</h4>
+
+<div class="formula">
+AX = B
+</div>
+
+<div class="formula">
+Solution:
+</div>
+
+<div class="formula">
+Multiply both sides by A⁻¹
+</div>
+
+<div class="formula">
+A⁻¹AX = A⁻¹B
+</div>
+
+<div class="formula">
+IX = A⁻¹B
+</div>
+
+<div class="formula">
+X = A⁻¹B
+</div>
+
+</div>
