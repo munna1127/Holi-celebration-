@@ -1289,6 +1289,697 @@ document.getElementById("testBox").innerHTML="Time Over<br>Score = "+tScore+" / 
 },1000)
 
 </script>
+  <h2>Extra Tools</h2>
+
+<div class="formula">Use these tools for better study experience</div>
+
+<button onclick="toggleTheme()">Toggle Dark / Light Mode</button>
+
+<button onclick="saveScore()">Save Quiz Score</button>
+
+<button onclick="showScore()">Show Saved Score</button>
+
+<button onclick="downloadNotes()">Download Notes (PDF)</button>
+
+<div id="savedScore" class="formula"></div>
+
+<script>
+
+/* THEME SWITCH */
+
+let dark=true
+
+function toggleTheme(){
+
+if(dark){
+
+document.body.style.background="white"
+document.body.style.color="black"
+
+dark=false
+
+}
+else{
+
+document.body.style.background="linear-gradient(135deg,#0f2027,#203a43,#2c5364)"
+document.body.style.color="white"
+
+dark=true
+
+}
+
+}
+
+/* SAVE QUIZ SCORE */
+
+function saveScore(){
+
+localStorage.setItem("mathScore",tScore)
+
+alert("Score saved!")
+
+}
+
+/* SHOW SAVED SCORE */
+
+function showScore(){
+
+let s = localStorage.getItem("mathScore")
+
+document.getElementById("savedScore").innerHTML="Saved Quiz Score = "+s
+
+}
+
+/* DOWNLOAD PDF */
+
+function downloadNotes(){
+
+window.print()
+
+}
+
+</script>
+  <h2>Matrix Solver Tool</h2>
+
+<div class="formula">Enter values of 2×2 matrix</div>
+
+<input id="m1" placeholder="a">
+<input id="m2" placeholder="b">
+<input id="m3" placeholder="c">
+<input id="m4" placeholder="d">
+
+<button onclick="solveMatrix()">Find Inverse</button>
+
+<div id="matrixResult" class="formula"></div>
+
+<hr>
+
+<h2>Determinant Solver</h2>
+
+<div class="formula">Calculate determinant instantly</div>
+
+<input id="d1" placeholder="a">
+<input id="d2" placeholder="b">
+<input id="d3" placeholder="c">
+<input id="d4" placeholder="d">
+
+<button onclick="det()">Calculate Determinant</button>
+
+<div id="detResult" class="formula"></div>
+
+<hr>
+
+<h2>Random Practice Generator</h2>
+
+<button onclick="genPractice()">Generate Question</button>
+
+<div id="practiceBox" class="formula"></div>
+
+<script>
+
+/* MATRIX INVERSE */
+
+function solveMatrix(){
+
+let a=parseFloat(document.getElementById("m1").value)
+let b=parseFloat(document.getElementById("m2").value)
+let c=parseFloat(document.getElementById("m3").value)
+let d=parseFloat(document.getElementById("m4").value)
+
+let det=(a*d)-(b*c)
+
+if(det==0){
+
+document.getElementById("matrixResult").innerHTML="Matrix has no inverse"
+
+return
+
+}
+
+let ia=d/det
+let ib=-b/det
+let ic=-c/det
+let id=a/det
+
+document.getElementById("matrixResult").innerHTML=
+
+"Inverse Matrix:<br>| "+ia+" "+ib+" |<br>| "+ic+" "+id+" |"
+
+}
+
+/* DETERMINANT */
+
+function det(){
+
+let a=parseFloat(document.getElementById("d1").value)
+let b=parseFloat(document.getElementById("d2").value)
+let c=parseFloat(document.getElementById("d3").value)
+let d=parseFloat(document.getElementById("d4").value)
+
+let ans=(a*d)-(b*c)
+
+document.getElementById("detResult").innerHTML="Determinant = "+ans
+
+}
+
+/* RANDOM PRACTICE */
+
+let questions=[
+
+"Find determinant of |2 3; 4 5|",
+
+"Find transpose of matrix [[1,2],[3,4]]",
+
+"If A² = A identify matrix",
+
+"Check if matrix symmetric [[2,3],[3,5]]",
+
+"Find determinant of |3 1; 2 7|"
+
+]
+
+function genPractice(){
+
+let r=Math.floor(Math.random()*questions.length)
+
+document.getElementById("practiceBox").innerHTML=questions[r]
+
+}
+
+</script>
+  <h2>Graph Plotter</h2>
+
+<div class="formula">Plot simple functions like x², sin(x), cos(x)</div>
+
+<input id="func" placeholder="Enter function e.g. x*x">
+
+<button onclick="plot()">Plot Graph</button>
+
+<canvas id="graph" width="400" height="300" style="background:white"></canvas>
+
+<script>
+
+function plot(){
+
+let f=document.getElementById("func").value
+
+let canvas=document.getElementById("graph")
+
+let ctx=canvas.getContext("2d")
+
+ctx.clearRect(0,0,400,300)
+
+ctx.beginPath()
+
+for(let x=-200;x<200;x++){
+
+let xp=x/20
+
+let y=eval(f)
+
+let yp=150-(y*20)
+
+if(x==-200){
+
+ctx.moveTo(x+200,yp)
+
+}
+else{
+
+ctx.lineTo(x+200,yp)
+
+}
+
+}
+
+ctx.stroke()
+
+}
+
+</script>
+
+<hr>
+
+<h2>Install This Site As App</h2>
+
+<div class="formula">
+Click the button to install this study tool on your phone
+</div>
+
+<button onclick="installApp()">Install App</button>
+
+<script>
+
+function installApp(){
+
+alert("Use browser menu → Add to Home Screen")
+
+}
+
+</script>
+
+<hr>
+
+<h2>Quick Revision Mode</h2>
+
+<button onclick="rev()">Show Formula</button>
+
+<div id="revBox" class="formula"></div>
+
+<script>
+
+let formulas=[
+
+"A = rectangular array of numbers",
+
+"(AB)ᵀ = BᵀAᵀ",
+
+"A⁻¹ = adj(A) / |A|",
+
+"|A| = ad − bc",
+
+"Area = ½ determinant formula",
+
+"Cramer rule x = Dx/D"
+
+]
+
+function rev(){
+
+let r=Math.floor(Math.random()*formulas.length)
+
+document.getElementById("revBox").innerHTML=formulas[r]
+
+}
+
+  </script>
+  <h2>Board Tricks (Matrices & Determinants)</h2>
+
+<div class="formula">
+If A² = A → Matrix is Idempotent
+</div>
+
+<div class="formula">
+If A² = I → Matrix is Involutory
+</div>
+
+<div class="formula">
+If |A| = 0 → Matrix is Singular
+</div>
+
+<div class="formula">
+If |A| ≠ 0 → Matrix is Non-Singular
+</div>
+
+<div class="formula">
+(AB)ᵀ = BᵀAᵀ
+</div>
+
+<div class="formula">
+(A⁻¹)ᵀ = (Aᵀ)⁻¹
+</div>
+
+<hr>
+
+<h2>Determinant Step Expansion Tool</h2>
+
+<div class="formula">Enter 3×3 determinant values</div>
+
+<input id="e1" placeholder="a">
+<input id="e2" placeholder="b">
+<input id="e3" placeholder="c">
+
+<input id="e4" placeholder="d">
+<input id="e5" placeholder="e">
+<input id="e6" placeholder="f">
+
+<input id="e7" placeholder="g">
+<input id="e8" placeholder="h">
+<input id="e9" placeholder="i">
+
+<button onclick="expand()">Solve</button>
+
+<div id="expandResult" class="formula"></div>
+
+<script>
+
+function expand(){
+
+let a=parseFloat(e1.value)
+let b=parseFloat(e2.value)
+let c=parseFloat(e3.value)
+
+let d=parseFloat(e4.value)
+let e=parseFloat(e5.value)
+let f=parseFloat(e6.value)
+
+let g=parseFloat(e7.value)
+let h=parseFloat(e8.value)
+let i=parseFloat(e9.value)
+
+let det = a*(e*i-f*h) - b*(d*i-f*g) + c*(d*h-e*g)
+
+document.getElementById("expandResult").innerHTML="Determinant = "+det
+
+}
+
+</script>
+
+<hr>
+
+<h2>Random MCQ Practice</h2>
+
+<button onclick="mcq()">Generate MCQ</button>
+
+<div id="mcqBox" class="formula"></div>
+
+<script>
+
+let mcqs=[
+
+"Find determinant of |4 2; 1 3|",
+
+"Transpose of [[1,2],[5,7]] ?",
+
+"If A² = I matrix type?",
+
+"Check if determinant zero for |2 4; 1 2|",
+
+"Find order of matrix with 3 rows and 4 columns"
+
+]
+
+function mcq(){
+
+let r=Math.floor(Math.random()*mcqs.length)
+
+document.getElementById("mcqBox").innerHTML=mcqs[r]
+
+}
+
+  </script>
+  <h2>Matrix Multiplication Calculator</h2>
+
+<div class="formula">Enter values of Matrix A</div>
+
+<input id="a1" placeholder="a">
+<input id="a2" placeholder="b">
+<input id="a3" placeholder="c">
+<input id="a4" placeholder="d">
+
+<div class="formula">Enter values of Matrix B</div>
+
+<input id="b1" placeholder="e">
+<input id="b2" placeholder="f">
+<input id="b3" placeholder="g">
+<input id="b4" placeholder="h">
+
+<button onclick="mul()">Multiply</button>
+
+<div id="mulResult" class="formula"></div>
+
+<script>
+
+function mul(){
+
+let a1=parseFloat(document.getElementById("a1").value)
+let a2=parseFloat(document.getElementById("a2").value)
+let a3=parseFloat(document.getElementById("a3").value)
+let a4=parseFloat(document.getElementById("a4").value)
+
+let b1=parseFloat(document.getElementById("b1").value)
+let b2=parseFloat(document.getElementById("b2").value)
+let b3=parseFloat(document.getElementById("b3").value)
+let b4=parseFloat(document.getElementById("b4").value)
+
+let r1 = a1*b1 + a2*b3
+let r2 = a1*b2 + a2*b4
+let r3 = a3*b1 + a4*b3
+let r4 = a3*b2 + a4*b4
+
+document.getElementById("mulResult").innerHTML=
+
+"Result Matrix:<br>| "+r1+" "+r2+" |<br>| "+r3+" "+r4+" |"
+
+}
+
+</script>
+
+<hr>
+
+<h2>Step-by-Step Inverse Explanation</h2>
+
+<div class="formula">
+
+For matrix
+
+<br>
+
+|a b|
+<br>
+|c d|
+
+</div>
+
+<div class="formula">
+
+Step 1 → Find determinant
+
+<br>
+
+|A| = ad − bc
+
+</div>
+
+<div class="formula">
+
+Step 2 → Swap diagonal elements
+
+</div>
+
+<div class="formula">
+
+Step 3 → Change sign of b and c
+
+</div>
+
+<div class="formula">
+
+Step 4 → Multiply by 1/(ad−bc)
+
+</div>
+
+<div class="formula">
+
+Final inverse:
+
+<br>
+
+1/(ad−bc)
+
+<br>
+
+| d −b |
+<br>
+| −c a |
+
+</div>
+
+<hr>
+
+<h2>Important Board Questions (Extra)</h2>
+
+<div class="formula">
+
+1. Show that matrix is symmetric.
+
+</div>
+
+<div class="formula">
+
+2. Verify (AB)ᵀ = BᵀAᵀ.
+
+</div>
+
+<div class="formula">
+
+3. Find inverse using adjoint method.
+
+</div>
+
+<div class="formula">
+
+4. Solve AX = B.
+
+</div>
+
+<div class="formula">
+
+5. Find determinant of 3×3 matrix.
+
+</div>
+
+<div class="formula">
+
+6. Find area of triangle using determinant.
+
+</div>
+
+<div class="formula">
+
+7. If determinant = 0 show rows proportional.
+
+</div>
+
+</div>
+  <h2>Matrix Rank Checker (2×2)</h2>
+
+<div class="formula">Enter matrix values</div>
+
+<input id="r1" placeholder="a">
+<input id="r2" placeholder="b">
+<input id="r3" placeholder="c">
+<input id="r4" placeholder="d">
+
+<button onclick="rank()">Find Rank</button>
+
+<div id="rankResult" class="formula"></div>
+
+<script>
+
+function rank(){
+
+let a=parseFloat(r1.value)
+let b=parseFloat(r2.value)
+let c=parseFloat(r3.value)
+let d=parseFloat(r4.value)
+
+let det = a*d - b*c
+
+if(det!=0){
+
+document.getElementById("rankResult").innerHTML="Rank = 2"
+
+}
+else{
+
+document.getElementById("rankResult").innerHTML="Rank = 1 (or less)"
+
+}
+
+}
+
+</script>
+
+<hr>
+
+<h2>Exam Revision Mode</h2>
+
+<button onclick="revise()">Show Important Formula</button>
+
+<div id="reviseBox" class="formula"></div>
+
+<script>
+
+let imp=[
+
+"Matrix = rectangular array of numbers",
+
+"(AB)ᵀ = BᵀAᵀ",
+
+"A symmetric matrix satisfies Aᵀ = A",
+
+"A skew symmetric matrix satisfies Aᵀ = −A",
+
+"A⁻¹ = adj(A)/|A|",
+
+"|A| = ad − bc",
+
+"Cofactor Cij = (−1)^(i+j) Mij",
+
+"Area of triangle = ½ determinant formula",
+
+"If A² = A → Idempotent",
+
+"If A² = I → Involutory",
+
+"Determinant = 0 → Singular matrix",
+
+"Row interchange changes determinant sign",
+
+"Equal rows → determinant zero",
+
+"Minor = determinant after removing row column",
+
+"Adjoint = transpose of cofactor matrix",
+
+"x = Dx/D (Cramer's rule)",
+
+"Order of matrix = rows × columns",
+
+"Identity matrix diagonal = 1",
+
+"Nilpotent matrix Aⁿ = 0",
+
+"(AB)⁻¹ = B⁻¹A⁻¹"
+
+]
+
+function revise(){
+
+let r=Math.floor(Math.random()*imp.length)
+
+document.getElementById("reviseBox").innerHTML=imp[r]
+
+}
+
+</script>
+
+<hr>
+
+<h2>Random Board Question Generator</h2>
+
+<button onclick="boardQ()">Generate Question</button>
+
+<div id="boardBox" class="formula"></div>
+
+<script>
+
+let board=[
+
+"Find inverse of matrix using adjoint method",
+
+"Verify (AB)ᵀ = BᵀAᵀ",
+
+"Show matrix symmetric",
+
+"Find determinant of 3×3 matrix",
+
+"Solve AX = B",
+
+"Find transpose of matrix",
+
+"Show determinant zero",
+
+"Find minors and cofactors",
+
+"Find area of triangle using determinant",
+
+"Check if matrix skew symmetric"
+
+]
+
+function boardQ(){
+
+let r=Math.floor(Math.random()*board.length)
+
+document.getElementById("boardBox").innerHTML=board[r]
+
+}
+
+</script>
+
+</div>
 
 <!-- ================= NAVIGATION ================= -->
 
