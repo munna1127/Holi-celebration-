@@ -5,7 +5,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Class 12 Maths Board Library</title>
+<title>Class 12 Maths Formula Library</title>
 
 <style>
 
@@ -17,9 +17,9 @@ color:white;
 }
 
 .container{
-max-width:1000px;
+max-width:1100px;
 margin:auto;
-padding:20px;
+padding:25px;
 }
 
 h1{
@@ -27,55 +27,62 @@ text-align:center;
 }
 
 .section{
-margin-top:30px;
+margin-top:35px;
 background:rgba(255,255,255,0.08);
-padding:20px;
-border-radius:10px;
+padding:25px;
+border-radius:12px;
 }
 
 .formula{
 background:rgba(255,255,255,0.12);
-padding:10px;
+padding:12px;
 margin:8px 0;
-border-radius:6px;
+border-radius:8px;
+font-size:15px;
 }
 
 .search{
 width:100%;
-padding:12px;
+padding:14px;
+border:none;
+border-radius:10px;
+margin-top:15px;
+margin-bottom:25px;
+font-size:16px;
+}
+
+.nav{
+text-align:center;
+margin-top:25px;
+}
+
+.nav button{
+padding:10px 20px;
 border:none;
 border-radius:8px;
-margin-top:10px;
-margin-bottom:20px;
+background:#0072ff;
+color:white;
+font-size:15px;
+cursor:pointer;
+margin:6px;
+}
+
+.nav button:hover{
+opacity:0.9;
+}
+
+.footer{
+text-align:center;
+margin-top:50px;
+padding:25px;
+font-weight:bold;
+color:#00ffcc;
 font-size:16px;
 }
 
 hr{
 border:1px solid rgba(255,255,255,0.2);
-margin:20px 0;
-}
-
-.nav{
-text-align:center;
-margin-top:20px;
-}
-
-.nav button{
-padding:10px 18px;
-border:none;
-border-radius:8px;
-background:#0072ff;
-color:white;
-cursor:pointer;
-margin:5px;
-}
-
-.footer{
-text-align:center;
-margin-top:40px;
-padding:20px;
-font-weight:bold;
-color:#00ffcc;
+margin:25px 0;
 }
 
 </style>
@@ -86,165 +93,1204 @@ color:#00ffcc;
 
 <div class="container">
 
-<h1>Class 12 Maths Board Formula Library</h1>
+<h1>Class 12 Maths Complete Board Library</h1>
 
-<input type="text" class="search" placeholder="Search formula..." onkeyup="searchFormula(this.value)">
+<input
+type="text"
+class="search"
+placeholder="Search formula or concept..."
+onkeyup="searchFormula(this.value)"
+>
 
-<!-- MATRICES -->
+<!-- ================= MATRICES START ================= -->
+  <h3>1. Definition of Matrix</h3>
 
-<div id="matrices" class="section">
+<div class="formula">Matrix = Rectangular array of numbers arranged in rows and columns</div>
 
-<h2>Matrices</h2>
-
-<div class="formula">Matrix = Rectangular array of numbers</div>
-<div class="formula">Order = m × n</div>
-
-<div class="formula">Row Matrix → 1 × n</div>
-<div class="formula">Column Matrix → m × 1</div>
-<div class="formula">Square Matrix → n × n</div>
-
-<div class="formula">Identity Matrix → diagonal = 1</div>
-
-<div class="formula">(A+B)ij = aij + bij</div>
-
-<div class="formula">(AB)ij = Σ aik bkj</div>
-
-<div class="formula">AB ≠ BA</div>
-
-<div class="formula">(AB)ᵀ = BᵀAᵀ</div>
-
-<div class="formula">Aᵀ = A → symmetric</div>
-
-<div class="formula">Aᵀ = −A → skew symmetric</div>
-
-<div class="formula">AA⁻¹ = I</div>
-
-<div class="formula">(AB)⁻¹ = B⁻¹A⁻¹</div>
-
-<div class="formula">Idempotent → A² = A</div>
-
-<div class="formula">Involutory → A² = I</div>
-
-<div class="formula">Nilpotent → Aⁿ = 0</div>
+<div class="formula">Order of matrix = m × n (rows × columns)</div>
 
 <hr>
 
-<h3>Matrix Solving Questions</h3>
+<h3>2. Types of Matrices</h3>
+
+<div class="formula">Row Matrix → matrix having only one row</div>
+
+<div class="formula">Column Matrix → matrix having only one column</div>
+
+<div class="formula">Square Matrix → number of rows = number of columns</div>
+
+<div class="formula">Zero Matrix → all elements are zero</div>
+
+<div class="formula">Diagonal Matrix → non-zero elements only on diagonal</div>
+
+<div class="formula">Scalar Matrix → diagonal elements equal</div>
+
+<div class="formula">Identity Matrix → diagonal elements = 1</div>
+
+<div class="formula">Upper Triangular Matrix → aᵢⱼ = 0 for i > j</div>
+
+<div class="formula">Lower Triangular Matrix → aᵢⱼ = 0 for i < j</div>
+
+<hr>
+
+<h3>3. Equality of Matrices</h3>
+
+<div class="formula">Two matrices are equal if their corresponding elements are equal</div>
+
+<div class="formula">A = B if aᵢⱼ = bᵢⱼ</div>
+
+<hr>
+
+<h3>4. Matrix Addition</h3>
+
+<div class="formula">Possible only when matrices have same order</div>
+
+<div class="formula">(A + B)ᵢⱼ = aᵢⱼ + bᵢⱼ</div>
+
+<div class="formula">Commutative property → A + B = B + A</div>
+
+<div class="formula">Associative property → A + (B + C) = (A + B) + C</div>
+
+<hr>
+
+<h3>5. Scalar Multiplication</h3>
+
+<div class="formula">kA = multiply every element of matrix by scalar k</div>
+
+<hr>
+
+<h3>6. Matrix Multiplication</h3>
+
+<div class="formula">AB exists only if columns of A = rows of B</div>
+
+<div class="formula">(AB)ᵢⱼ = Σ aᵢₖ bₖⱼ</div>
+
+<div class="formula">Matrix multiplication is NOT commutative</div>
+
+<div class="formula">AB ≠ BA</div>
+
+<div class="formula">Associative property → A(BC) = (AB)C</div>
+
+<div class="formula">Distributive property → A(B + C) = AB + AC</div>
+
+<hr>
+
+<h3>7. Transpose of Matrix</h3>
+
+<div class="formula">Transpose of matrix A is written as Aᵀ</div>
+
+<div class="formula">(Aᵀ)ᵢⱼ = aⱼᵢ</div>
+
+<div class="formula">(Aᵀ)ᵀ = A</div>
+
+<div class="formula">(A + B)ᵀ = Aᵀ + Bᵀ</div>
+
+<div class="formula">(kA)ᵀ = kAᵀ</div>
+
+<div class="formula">(AB)ᵀ = BᵀAᵀ</div>
+
+<hr>
+
+<h3>8. Symmetric Matrix</h3>
+
+<div class="formula">A matrix is symmetric if</div>
+
+<div class="formula">Aᵀ = A</div>
+
+<hr>
+
+<h3>9. Skew Symmetric Matrix</h3>
+
+<div class="formula">A matrix is skew symmetric if</div>
+
+<div class="formula">Aᵀ = −A</div>
+
+<div class="formula">Diagonal elements of skew symmetric matrix are always zero</div>
+
+<hr>
+
+<h3>10. Decomposition Theorem</h3>
+
+<div class="formula">Any square matrix can be written as sum of symmetric and skew symmetric matrices</div>
+
+<div class="formula">A = ½(A + Aᵀ) + ½(A − Aᵀ)</div>
+
+<hr>
+
+<h3>11. Identity Matrix</h3>
+
+<div class="formula">AI = IA = A</div>
+
+<div class="formula">I² = I</div>
+
+<hr>
+
+<h3>12. Inverse of Matrix</h3>
+
+<div class="formula">AA⁻¹ = I</div>
+
+<div class="formula">A⁻¹A = I</div>
+
+<div class="formula">Inverse exists only when |A| ≠ 0</div>
+
+<hr>
+
+<h3>13. Important Properties of Inverse</h3>
+
+<div class="formula">(AB)⁻¹ = B⁻¹A⁻¹</div>
+
+<div class="formula">(Aᵀ)⁻¹ = (A⁻¹)ᵀ</div>
+
+<div class="formula">(kA)⁻¹ = (1/k)A⁻¹</div>
+
+<hr>
+
+<h3>14. Solving Matrix Equations</h3>
+
+<div class="formula">AX = B → X = A⁻¹B</div>
+
+<div class="formula">XA = B → X = BA⁻¹</div>
+
+<hr>
+
+<h3>15. Special Matrices</h3>
+
+<div class="formula">Idempotent Matrix → A² = A</div>
+
+<div class="formula">Involutory Matrix → A² = I</div>
+
+<div class="formula">Nilpotent Matrix → Aⁿ = 0</div>
+
+<hr>
+  <h2>Board Repeated Questions (Matrices)</h2>
+
+<h3>Q1. If A = B find k</h3>
 
 <div class="formula">
-
-Q1 If A = B find k
-
-<br><br>
-
-A = |2 k|
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|3 4|
-
-<br><br>
-
-B = |2 5|
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|3 4|
-
-<br><br>
-
-Solution → k = 5
-
+A =
+<br>| 2  k |
+<br>| 3  4 |
 </div>
 
 <div class="formula">
+B =
+<br>| 2  5 |
+<br>| 3  4 |
+</div>
 
-Q2 Find Transpose
+<div class="formula">
+Solution:
+<br>
+Corresponding elements equal
+<br>
+k = 5
+</div>
 
-<br><br>
+<hr>
 
+<h3>Q2. Find transpose of matrix</h3>
+
+<div class="formula">
 A =
 <br>|1 2 3|
 <br>|4 5 6|
+</div>
 
-<br><br>
+<div class="formula">
+Solution:
+<br>
+Transpose means rows become columns
+</div>
 
+<div class="formula">
 Aᵀ =
 <br>|1 4|
 <br>|2 5|
 <br>|3 6|
+</div>
 
+<hr>
+
+<h3>Q3. Show matrix is symmetric</h3>
+
+<div class="formula">
+A =
+<br>|2 3|
+<br>|3 4|
 </div>
 
 <div class="formula">
+Solution:
+<br>
+Find transpose
+<br>
+Aᵀ =
+<br>|2 3|
+<br>|3 4|
+</div>
 
-Q3 Solve AX = B
+<div class="formula">
+Since Aᵀ = A
+<br>
+Matrix is symmetric
+</div>
 
-<br><br>
+<hr>
 
+<h3>Q4. Show matrix is skew symmetric</h3>
+
+<div class="formula">
+A =
+<br>|0  3|
+<br>|-3 0|
+</div>
+
+<div class="formula">
+Solution:
+<br>
+Find transpose
+</div>
+
+<div class="formula">
+Aᵀ =
+<br>|0 -3|
+<br>|3  0|
+</div>
+
+<div class="formula">
+Aᵀ = −A
+<br>
+Matrix is skew symmetric
+</div>
+
+<hr>
+
+<h3>Q5. Solve AX = B</h3>
+
+<div class="formula">
 AX = B
+</div>
 
+<div class="formula">
+Solution:
 <br>
-
 Multiply both sides by A⁻¹
+</div>
 
-<br>
+<div class="formula">
+A⁻¹AX = A⁻¹B
+</div>
 
+<div class="formula">
+IX = A⁻¹B
+</div>
+
+<div class="formula">
 X = A⁻¹B
-
 </div>
 
+<hr>
+
+<h3>Q6. Find inverse of matrix</h3>
+
+<div class="formula">
+A =
+<br>|a b|
+<br>|c d|
 </div>
 
-<!-- DETERMINANTS -->
+<div class="formula">
+|A| = ad − bc
+</div>
+
+<div class="formula">
+A⁻¹ =
+<br>1/(ad − bc)
+<br>| d  −b |
+<br>| −c  a |
+</div>
+
+<hr>
+
+<h3>Q7. If A² = A show matrix is idempotent</h3>
+
+<div class="formula">
+Definition:
+<br>
+A² = A
+<br>
+Such matrix is called idempotent matrix
+</div>
+
+<hr>
+
+<h3>Q8. If A² = I show matrix is involutory</h3>
+
+<div class="formula">
+Definition:
+<br>
+A² = I
+<br>
+Such matrix is involutory matrix
+</div>
+
+<hr>
+
+<h3>Q9. Find value of x if matrices equal</h3>
+
+<div class="formula">
+A =
+<br>|x 2|
+<br>|3 4|
+</div>
+
+<div class="formula">
+B =
+<br>|5 2|
+<br>|3 4|
+</div>
+
+<div class="formula">
+Solution:
+<br>
+Corresponding elements equal
+<br>
+x = 5
+</div>
+
+<hr>
+
+<h3>Q10. Verify (AB)ᵀ = BᵀAᵀ</h3>
+
+<div class="formula">
+Take matrices A and B
+</div>
+
+<div class="formula">
+Find AB
+</div>
+
+<div class="formula">
+Take transpose
+</div>
+
+<div class="formula">
+Find Bᵀ and Aᵀ
+</div>
+
+<div class="formula">
+Multiply BᵀAᵀ
+</div>
+
+<div class="formula">
+Both results equal
+<br>
+Hence proved
+</div>
+
+<hr>
+  <!-- ================= DETERMINANTS START ================= -->
 
 <div id="determinants" class="section">
 
-<h2>Determinants</h2>
+<h2>Chapter 2 – Determinants</h2>
 
-<div class="formula">|A| = determinant of matrix</div>
+<h3>1. Definition</h3>
 
-<div class="formula">Row interchange changes sign</div>
+<div class="formula">Determinant is a special number associated with square matrix</div>
 
-<div class="formula">If two rows equal → determinant = 0</div>
+<div class="formula">Written as |A|</div>
 
-<div class="formula">Factor can be taken out</div>
+<hr>
 
-<div class="formula">Minor → determinant after removing row & column</div>
-
-<div class="formula">Cofactor Cij = (-1)^(i+j) Mij</div>
-
-<div class="formula">adj(A) = transpose of cofactor matrix</div>
-
-<div class="formula">A⁻¹ = adj(A) / |A|</div>
+<h3>2. Determinant of 2×2 Matrix</h3>
 
 <div class="formula">
 
-Area of triangle
+| a  b |
 
-<br>
-
-½ | x1 y1 1 |
-<br>
-&nbsp;&nbsp;&nbsp;| x2 y2 1 |
-<br>
-&nbsp;&nbsp;&nbsp;| x3 y3 1 |
+| c  d |
 
 </div>
 
 <div class="formula">
 
-Cramer's Rule
+|A| = ad − bc
 
-<br>
+</div>
+
+<hr>
+
+<h3>3. Determinant of 3×3 Matrix</h3>
+
+<div class="formula">
+
+| a  b  c |
+
+| d  e  f |
+
+| g  h  i |
+
+</div>
+
+<div class="formula">
+
+|A| = a(ei − fh) − b(di − fg) + c(dh − eg)
+
+</div>
+
+<hr>
+
+<h3>4. Minor of Element</h3>
+
+<div class="formula">
+
+Minor = determinant obtained after deleting row and column of element
+
+</div>
+
+<hr>
+
+<h3>5. Cofactor</h3>
+
+<div class="formula">
+
+Cij = (−1)^(i+j) Mij
+
+</div>
+
+<hr>
+
+<h3>6. Adjoint of Matrix</h3>
+
+<div class="formula">
+
+adj(A) = transpose of cofactor matrix
+
+</div>
+
+<hr>
+
+<h3>7. Inverse using Determinant</h3>
+
+<div class="formula">
+
+A⁻¹ = adj(A) / |A|
+
+</div>
+
+<div class="formula">
+
+Inverse exists only if |A| ≠ 0
+
+</div>
+
+<hr>
+
+<h3>8. Important Properties</h3>
+
+<div class="formula">If two rows are equal → determinant = 0</div>
+
+<div class="formula">If two rows are proportional → determinant = 0</div>
+
+<div class="formula">Row interchange changes sign of determinant</div>
+
+<div class="formula">Common factor can be taken outside</div>
+
+<div class="formula">If a row becomes zero → determinant = 0</div>
+
+<hr>
+
+<h3>9. Area of Triangle using Determinant</h3>
+
+<div class="formula">
+
+Area = ½ |
+
+x1 y1 1
+
+x2 y2 1
+
+x3 y3 1
+
+|
+
+</div>
+
+<hr>
+
+<h3>10. Cramer's Rule</h3>
+
+<div class="formula">
+
+For equations
+
+a1x + b1y = c1
+
+a2x + b2y = c2
+
+</div>
+
+<div class="formula">
 
 x = Dx / D
 
-<br>
+</div>
+
+<div class="formula">
 
 y = Dy / D
 
 </div>
 
+<hr>
+
+<h2>Board Repeated Questions (Determinants)</h2>
+
+<h3>Q1 Find determinant</h3>
+
+<div class="formula">
+
+| 2 3 |
+
+| 4 5 |
+
 </div>
 
-<!-- NAVIGATION -->
+<div class="formula">
+
+Solution
+
+|A| = (2×5 − 3×4)
+
+</div>
+
+<div class="formula">
+
+= 10 − 12
+
+</div>
+
+<div class="formula">
+
+|A| = −2
+
+</div>
+
+<hr>
+
+<h3>Q2 Find minors and cofactors</h3>
+
+<div class="formula">
+
+Matrix
+
+|1 2|
+
+|3 4|
+
+</div>
+
+<div class="formula">
+
+Minor of 1 = 4
+
+</div>
+
+<div class="formula">
+
+Cofactor of 1 = (+)4
+
+</div>
+
+<hr>
+
+<h3>Q3 If determinant = 0 show rows proportional</h3>
+
+<div class="formula">
+
+|2 4|
+
+|1 2|
+
+</div>
+
+<div class="formula">
+
+|A| = (2×2 − 4×1)
+
+</div>
+
+<div class="formula">
+
+= 4 − 4 = 0
+
+</div>
+
+<div class="formula">
+
+Rows proportional
+
+</div>
+
+<hr>
+
+<h3>Q4 Find inverse using determinant</h3>
+
+<div class="formula">
+
+A =
+
+|a b|
+
+|c d|
+
+</div>
+
+<div class="formula">
+
+|A| = ad − bc
+
+</div>
+
+<div class="formula">
+
+A⁻¹ = 1/(ad − bc)
+
+| d −b |
+
+| −c a |
+
+</div>
+
+<hr>
+
+<h3>Q5 Find area of triangle</h3>
+
+<div class="formula">
+
+Points
+
+(x1,y1)
+
+(x2,y2)
+
+(x3,y3)
+
+</div>
+
+<div class="formula">
+
+Area = ½ |
+
+x1 y1 1
+
+x2 y2 1
+
+x3 y3 1
+
+|
+
+</div>
+
+</div>
+  <h2>Extra Board Questions – Matrices</h2>
+
+<h3>Q11 Find k if matrices equal</h3>
+
+<div class="formula">
+
+A =
+<br>|3  k|
+<br>|2  1|
+
+</div>
+
+<div class="formula">
+
+B =
+<br>|3  5|
+<br>|2  1|
+
+</div>
+
+<div class="formula">
+
+Solution
+
+<br>
+
+k = 5
+
+</div>
+
+<hr>
+
+<h3>Q12 Find A²</h3>
+
+<div class="formula">
+
+A =
+<br>|1 2|
+<br>|3 4|
+
+</div>
+
+<div class="formula">
+
+A² = A × A
+
+</div>
+
+<div class="formula">
+
+A² =
+<br>|7 10|
+<br>|15 22|
+
+</div>
+
+<hr>
+
+<h3>Q13 If A² = A prove idempotent</h3>
+
+<div class="formula">
+
+If matrix satisfies A² = A
+
+<br>
+
+Matrix is idempotent
+
+</div>
+
+<hr>
+
+<h2>Extra Board Questions – Determinants</h2>
+
+<h3>Q6 Evaluate determinant</h3>
+
+<div class="formula">
+
+|3 1|
+<br>|5 2|
+
+</div>
+
+<div class="formula">
+
+= (3×2 − 1×5)
+
+</div>
+
+<div class="formula">
+
+= 6 − 5
+
+</div>
+
+<div class="formula">
+
+= 1
+
+</div>
+
+<hr>
+
+<h3>Q7 Prove determinant zero</h3>
+
+<div class="formula">
+
+|1 2|
+<br>|2 4|
+
+</div>
+
+<div class="formula">
+
+Rows proportional
+
+</div>
+
+<div class="formula">
+
+Determinant = 0
+
+</div>
+
+<hr>
+
+<h2>Practice Section</h2>
+
+<div class="formula">
+
+Practice 1
+
+<br>
+
+Find transpose of
+
+<br>
+
+|1 4|
+<br>|2 5|
+
+</div>
+
+<div class="formula">
+
+Practice 2
+
+<br>
+
+Find determinant
+
+<br>
+
+|4 3|
+<br>|2 1|
+
+</div>
+
+<div class="formula">
+
+Practice 3
+
+<br>
+
+Check if matrix symmetric
+
+<br>
+
+|2 5|
+<br>|5 3|
+
+</div>
+
+<hr>
+
+<h2>Matrix Calculator</h2>
+
+<div class="formula">
+
+Enter numbers for simple 2×2 determinant
+
+</div>
+
+<input id="a" placeholder="a">
+<input id="b" placeholder="b">
+<input id="c" placeholder="c">
+<input id="d" placeholder="d">
+
+<button onclick="calc()">Find Determinant</button>
+
+<div id="result"></div>
+
+<script>
+
+function calc(){
+
+let a=document.getElementById("a").value
+let b=document.getElementById("b").value
+let c=document.getElementById("c").value
+let d=document.getElementById("d").value
+
+let det=(a*d)-(b*c)
+
+document.getElementById("result").innerHTML="Determinant = "+det
+
+}
+
+</script>
+  <h2>Quick Practice Quiz</h2>
+
+<div class="formula">Choose the correct answer</div>
+
+<div id="quizBox">
+
+<h3 id="question"></h3>
+
+<button class="nav" onclick="answer(0)" id="op0"></button>
+<button class="nav" onclick="answer(1)" id="op1"></button>
+<button class="nav" onclick="answer(2)" id="op2"></button>
+<button class="nav" onclick="answer(3)" id="op3"></button>
+
+<div id="quizResult"></div>
+
+<button onclick="nextQ()">Next Question</button>
+
+<button onclick="resetQuiz()">Restart Quiz</button>
+
+</div>
+
+<script>
+
+let quiz = [
+
+{
+q:"Transpose of matrix [[1,2],[3,4]] ?",
+o:["[[1,3],[2,4]]","[[2,1],[4,3]]","[[1,4],[2,3]]","[[3,1],[4,2]]"],
+a:0
+},
+
+{
+q:"Determinant of |2 3; 4 5| ?",
+o:["-2","2","-1","1"],
+a:0
+},
+
+{
+q:"If A² = A matrix is called?",
+o:["Nilpotent","Idempotent","Identity","Scalar"],
+a:1
+},
+
+{
+q:"If determinant = 0 then matrix is?",
+o:["Singular","Identity","Scalar","Symmetric"],
+a:0
+}
+
+]
+
+let qi = 0
+let score = 0
+
+function loadQ(){
+
+document.getElementById("question").innerHTML = quiz[qi].q
+
+document.getElementById("op0").innerHTML = quiz[qi].o[0]
+document.getElementById("op1").innerHTML = quiz[qi].o[1]
+document.getElementById("op2").innerHTML = quiz[qi].o[2]
+document.getElementById("op3").innerHTML = quiz[qi].o[3]
+
+}
+
+function answer(i){
+
+if(i == quiz[qi].a){
+
+score++
+
+document.getElementById("quizResult").innerHTML="Correct ✅"
+
+}
+else{
+
+document.getElementById("quizResult").innerHTML="Wrong ❌"
+
+}
+
+}
+
+function nextQ(){
+
+qi++
+
+if(qi >= quiz.length){
+
+document.getElementById("quizBox").innerHTML="Quiz Finished<br>Score = "+score+" / "+quiz.length
+
+return
+
+}
+
+loadQ()
+
+document.getElementById("quizResult").innerHTML=""
+
+}
+
+function resetQuiz(){
+
+qi = 0
+score = 0
+
+loadQ()
+
+document.getElementById("quizResult").innerHTML=""
+
+}
+
+loadQ()
+
+</script>
+  <h2>Flashcard Revision Mode</h2>
+
+<div class="formula">
+Click the button to show a random formula for quick revision
+</div>
+
+<button onclick="showFlash()">Show Random Formula</button>
+
+<div id="flashcard" class="formula"></div>
+
+<script>
+
+let flash = [
+
+"Matrix = rectangular array of numbers",
+
+"(AB)ᵀ = BᵀAᵀ",
+
+"A symmetric matrix satisfies Aᵀ = A",
+
+"A skew symmetric matrix satisfies Aᵀ = −A",
+
+"A⁻¹ = adj(A) / |A|",
+
+"|A| = ad − bc (for 2×2 matrix)",
+
+"Cofactor Cij = (−1)^(i+j) Mij",
+
+"Determinant = 0 ⇒ rows proportional",
+
+"Area of triangle = ½ | x1 y1 1 ; x2 y2 1 ; x3 y3 1 |",
+
+"A² = A ⇒ Idempotent matrix",
+
+"A² = I ⇒ Involutory matrix"
+
+]
+
+function showFlash(){
+
+let r = Math.floor(Math.random()*flash.length)
+
+document.getElementById("flashcard").innerHTML = flash[r]
+
+}
+
+</script>
+  <h2>Mini Board Mock Test</h2>
+
+<div class="formula">Solve the MCQs below. Timer starts automatically.</div>
+
+<div id="testTimer" class="formula">Time Left: 05:00</div>
+
+<div id="testBox">
+
+<h3 id="tq"></h3>
+
+<button class="nav" onclick="tAns(0)" id="to0"></button>
+<button class="nav" onclick="tAns(1)" id="to1"></button>
+<button class="nav" onclick="tAns(2)" id="to2"></button>
+<button class="nav" onclick="tAns(3)" id="to3"></button>
+
+<div id="tResult"></div>
+
+<button onclick="nextTest()">Next</button>
+
+</div>
+
+<script>
+
+let test = [
+
+{
+q:"Order of matrix with 3 rows and 2 columns?",
+o:["2×3","3×2","3×3","2×2"],
+a:1
+},
+
+{
+q:"Determinant of |1 2; 3 4| ?",
+o:["-2","2","1","-1"],
+a:0
+},
+
+{
+q:"If Aᵀ = A matrix is?",
+o:["Skew symmetric","Diagonal","Symmetric","Scalar"],
+a:2
+},
+
+{
+q:"Value of determinant |2 5; 4 10| ?",
+o:["0","5","10","20"],
+a:0
+}
+
+]
+
+let ti = 0
+let tScore = 0
+
+function loadTest(){
+
+document.getElementById("tq").innerHTML = test[ti].q
+
+document.getElementById("to0").innerHTML = test[ti].o[0]
+document.getElementById("to1").innerHTML = test[ti].o[1]
+document.getElementById("to2").innerHTML = test[ti].o[2]
+document.getElementById("to3").innerHTML = test[ti].o[3]
+
+}
+
+function tAns(i){
+
+if(i == test[ti].a){
+
+tScore++
+
+document.getElementById("tResult").innerHTML="Correct ✅"
+
+}
+else{
+
+document.getElementById("tResult").innerHTML="Wrong ❌"
+
+}
+
+}
+
+function nextTest(){
+
+ti++
+
+if(ti >= test.length){
+
+document.getElementById("testBox").innerHTML="Test Finished<br>Score = "+tScore+" / "+test.length
+
+return
+
+}
+
+loadTest()
+
+document.getElementById("tResult").innerHTML=""
+
+}
+
+loadTest()
+
+/* TIMER */
+
+let time = 300
+
+let timer = setInterval(function(){
+
+let m = Math.floor(time/60)
+let s = time%60
+
+document.getElementById("testTimer").innerHTML="Time Left: "+m+":"+(s<10?"0"+s:s)
+
+time--
+
+if(time < 0){
+
+clearInterval(timer)
+
+document.getElementById("testBox").innerHTML="Time Over<br>Score = "+tScore+" / "+test.length
+
+}
+
+},1000)
+
+</script>
+
+<!-- ================= NAVIGATION ================= -->
 
 <div class="nav">
 
@@ -292,4 +1338,11 @@ formulas[i].style.display="none";
 </script>
 
 </body>
-</html>
+
+                              </html>
+
+  
+
+<div id="matrices" class="section">
+
+<h2>Chapter 1 – Matrices</h2>
